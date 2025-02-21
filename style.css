@@ -1,0 +1,161 @@
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-b');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+:root{
+  --primary-color:#f2e5d0;
+  --accent-color:#dbab5e;
+  --secondary-color:#fca72c;
+  --text-color:#725b3a;
+  --dark-primary:#1E1E1E;
+  --dark-sec:#FFA500;
+  --dark-text:#FFFFFF;
+}
+
+
+
+body{
+  background-color: var(--primary-color);
+  font-family: 'Euclid Circular B', sans-serif;
+  height: 100vh;                                
+}
+
+aside{
+  position: fixed;
+  inset: 0 auto 0 0;
+  padding: 1rem;
+  width: 300px;
+  background-color: var(--accent-color);
+  box-shadow: 1px 2px 11px 0px rgba(0,0,0,0.75);
+}
+body .dark{
+  background-color: var(--dark-primary);
+  color: var(--dark-text);
+}
+aside .dark{
+  background-color: var(--dark-sec);
+}
+
+nav{
+  height: 100%;
+    /* border: solid 1px black; */
+  position: relative;
+}
+
+nav header i{
+  padding: 10px;
+  font-size: 40px;
+}
+nav header{
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--text-color);
+  font-weight: bold;
+  /* margin-bottom: px; */
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+   /* align-items: center;  */
+  gap: 24px;
+  padding: 10px;
+  height: calc(100% - 60px); 
+}
+
+nav li{
+  font-size: 22px;
+  /* background-color: #fca72c; */
+}
+
+nav li i{
+  color: var(--text-color);
+  
+}
+
+nav li span{
+  color: #f9dfb6;
+  font-weight: 700;
+}
+
+nav  a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  line-height: 1.6;
+  padding: 0.625rem 0.875rem;
+}
+
+
+
+nav li:last-child{
+ margin-top: auto;
+}
+
+
+
+
+#light-theme{
+  display: none;
+}
+
+#light-theme.active{
+  display: block;
+}
+
+#dark-theme.non-active{
+  display: none;
+}
+
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-left: auto;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: rgb(197, 159, 6);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+/* input:checked + .slider {
+  background-color: var(--accent-color);
+} */
+
+.slider.active{
+  transform: translateX(20px);
+}
